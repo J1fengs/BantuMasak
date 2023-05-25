@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">BantuMasak</string>
+    <string name="welcome_slogan">Plan ahead, one meal at a time</string>
+    <string name="welcome_logo">application logo</string>
+    <string name="welcome_login">Log In</string>
+    <string name="welcome_signup">Sign Up</string>
+    <string name="register_greetings">Welcome!</string>
+    <string name="register_greetings2">Daftarkan akun Anda terlebih dahulu untuk merencanakan masakan anda</string>
+    <string name="register_emailhint">Email</string>
+    <string name="register_passwordhint">Password</string>
+    <string name="register_confirm_passwordhint">Confirm Password</string>
+    <string name="register_sign_up">Sign Up</string>
+    <string name="register_already_have_account">Already have account?</string>
+    <string name="register_login">Log In</string>
+    <string name="login_welcomeback">Welcome Back!</string>
+    <string name="login_greetings">Senang bertemu kembali! \nSilahkan masukan isian berikut untuk login</string>
+    <string name="login_don_t_have_account">Don’t have account?</string>
+</resources>
