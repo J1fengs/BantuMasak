@@ -3,8 +3,8 @@ package com.example.bantumasak.ui
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.bantumasak.local.UserPreference
-import com.example.bantumasak.ui.login.LoginViewModel
-import com.example.bantumasak.ui.main.MainViewModel
+import com.example.bantumasak.ui.activity.login.LoginViewModel
+import com.example.bantumasak.ui.activity.main.MainViewModel
 
 class ViewModelFactory(private val pref: UserPreference) : ViewModelProvider.NewInstanceFactory() {
     @Suppress("UNCHECKED_CAST")

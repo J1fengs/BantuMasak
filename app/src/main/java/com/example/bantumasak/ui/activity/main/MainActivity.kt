@@ -1,4 +1,4 @@
-package com.example.bantumasak.ui.main
+package com.example.bantumasak.ui.activity.main
 
 import android.content.Context
 import android.content.Intent
@@ -10,11 +10,16 @@ import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.findNavController
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.setupActionBarWithNavController
+import androidx.navigation.ui.setupWithNavController
 import com.example.bantumasak.R
 import com.example.bantumasak.databinding.ActivityMainBinding
 import com.example.bantumasak.local.UserPreference
 import com.example.bantumasak.ui.ViewModelFactory
-import com.example.bantumasak.ui.WelcomeActivity
+import com.example.bantumasak.ui.activity.WelcomeActivity
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")
 
@@ -27,6 +32,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        setBottomNav()
         setViewModel()
     }
 
@@ -44,6 +50,19 @@ class MainActivity : AppCompatActivity() {
                 finish()
             }
         }
+    }
+
+    private fun setBottomNav() {
+        //Bottom Navigation
+        val navView: BottomNavigationView = binding.navView
+        val navController = findNavController(R.id.nav_host_fragment_activity_main)
+        val appBarConfiguration = AppBarConfiguration(
+            setOf(
+                R.id.navigation_home, R.id.navigation_discover, R.id.navigation_planner
+            )
+        )
+        setupActionBarWithNavController(navController, appBarConfiguration)
+        navView.setupWithNavController(navController)
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

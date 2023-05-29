@@ -1,4 +1,4 @@
-package com.example.bantumasak.ui
+package com.example.bantumasak.ui.activity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -9,7 +9,7 @@ import android.widget.Toast
 import com.example.bantumasak.api.ApiConfig
 import com.example.bantumasak.api.model.RegisterModel
 import com.example.bantumasak.databinding.ActivityRegisterBinding
-import com.example.bantumasak.ui.login.LoginActivity
+import com.example.bantumasak.ui.activity.login.LoginActivity
 import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.Callback

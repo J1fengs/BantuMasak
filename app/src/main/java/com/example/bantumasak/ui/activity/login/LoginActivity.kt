@@ -1,4 +1,4 @@
-package com.example.bantumasak.ui.login
+package com.example.bantumasak.ui.activity.login
 
 import android.content.Context
 import android.content.Intent
@@ -17,8 +17,8 @@ import com.example.bantumasak.api.response.LoginResponse
 import com.example.bantumasak.databinding.ActivityLoginBinding
 import com.example.bantumasak.local.UserModel
 import com.example.bantumasak.local.UserPreference
-import com.example.bantumasak.ui.main.MainActivity
-import com.example.bantumasak.ui.RegisterActivity
+import com.example.bantumasak.ui.activity.main.MainActivity
+import com.example.bantumasak.ui.activity.RegisterActivity
 import com.example.bantumasak.ui.ViewModelFactory
 import retrofit2.Call
 import retrofit2.Callback

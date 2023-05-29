@@ -16,4 +16,7 @@
     <string name="login_greetings">Senang bertemu kembali! \nSilahkan masukan isian berikut untuk login</string>
     <string name="login_don_t_have_account">Don’t have account?</string>
     <string name="optionmenu_logout">Logout</string>
+    <string name="bottomnav_home">Home</string>
+    <string name="bottomnav_discover">Discover</string>
+    <string name="bottomnav_meal_plan">Planner</string>
 </resources>

@@ -1,10 +1,10 @@
-package com.example.bantumasak.ui
+package com.example.bantumasak.ui.activity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.bantumasak.databinding.ActivityWelcomeBinding
-import com.example.bantumasak.ui.login.LoginActivity
+import com.example.bantumasak.ui.activity.login.LoginActivity
 
 class WelcomeActivity : AppCompatActivity() {
     private lateinit var binding: ActivityWelcomeBinding
