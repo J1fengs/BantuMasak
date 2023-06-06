@@ -7,12 +7,12 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.example.bantumasak.ui.fragments.HomeFragment"
+        android:name="com.example.bantumasak.ui.fragments.home.HomeFragment"
         android:label="Home"
         tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/navigation_discover"
-        android:name="com.example.bantumasak.ui.fragments.DiscoverFragment"
+        android:name="com.example.bantumasak.ui.fragments.discover.DiscoverFragment"
         android:label="Discover"
         tools:layout="@layout/fragment_discover" />
     <fragment

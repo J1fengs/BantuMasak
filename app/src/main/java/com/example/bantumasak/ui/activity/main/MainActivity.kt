@@ -44,12 +44,12 @@ class MainActivity : AppCompatActivity() {
             )
         )[MainViewModel::class.java]
 
-        mainViewModel.getUser().observe(this){
-            if(!it.isLogin){
-                startActivity(Intent(this, WelcomeActivity::class.java))
-                finish()
-            }
-        }
+//        mainViewModel.getUser().observe(this){
+//            if(!it.isLogin){
+//                startActivity(Intent(this, WelcomeActivity::class.java))
+//                finish()
+//            }
+//        }
     }
 
     private fun setBottomNav() {
