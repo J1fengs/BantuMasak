@@ -7,9 +7,11 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.bantumasak.R
 import com.example.bantumasak.adapter.RecipesAdapter
+import com.example.bantumasak.api.response.MealsItem
 import com.example.bantumasak.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
@@ -30,21 +32,39 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setRecyclerView()
-
-        homeViewModel.getRecipe("Chicken")
-        homeViewModel.getList().observe(viewLifecycleOwner) { list ->
-            adapter.setList(list)
-        }
+        getRecipesData()
     }
 
     private fun setRecyclerView(){
         adapter = RecipesAdapter()
         adapter.notifyDataSetChanged()
+        adapter.setOnItemClicked(object : RecipesAdapter.OnItemClicked{
+            override fun onItemClicked(data: MealsItem) {
+                val bundle = Bundle().apply {
+                    putString("recipeId", data.strMeal)
+                }
+                findNavController().navigate(R.id.navigation_detail, bundle)
+            }
+        })
         binding.apply {
             homeRv.layoutManager = GridLayoutManager(context, 2)
             homeRv.setHasFixedSize(true)
             homeRv.adapter = adapter
         }
+    }
+
+    private fun getRecipesData() {
+        homeViewModel.getRecipe("Chicken")
+        homeViewModel.isLoading.observe(viewLifecycleOwner) {
+            showLoading(it)
+        }
+        homeViewModel.getList().observe(viewLifecycleOwner) { list ->
+            adapter.setList(list)
+        }
+    }
+
+    private fun showLoading(isLoading: Boolean) {
+        binding.homeProgressBar.visibility= if (isLoading) View.VISIBLE else View.GONE
     }
 
     override fun onDestroyView() {

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg_pattern"
     tools:context=".ui.activity.RegisterActivity">
 
     <TextView
@@ -38,6 +39,7 @@
         android:layout_marginTop="26dp"
         android:hint="@string/register_emailhint"
         android:textColorHint="@color/gray"
+        android:background="#FFFFFF"
         app:boxStrokeColor="@color/gray"
         app:startIconDrawable="@drawable/account_icon"
         app:startIconTint="@color/gray"
@@ -60,9 +62,12 @@
         android:layout_marginTop="20dp"
         android:hint="@string/register_passwordhint"
         android:textColorHint="@color/gray"
+        android:background="#FFFFFF"
         app:boxStrokeColor="@color/gray"
         app:startIconDrawable="@drawable/lock_icon"
         app:startIconTint="@color/gray"
+        app:endIconMode="password_toggle"
+        app:endIconTint="@color/gray"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout">
@@ -82,9 +87,12 @@
         android:layout_marginTop="20dp"
         android:hint="@string/register_confirm_passwordhint"
         android:textColorHint="@color/gray"
+        android:background="#FFFFFF"
         app:boxStrokeColor="@color/gray"
         app:startIconDrawable="@drawable/lock_icon"
         app:startIconTint="@color/gray"
+        app:endIconMode="password_toggle"
+        app:endIconTint="@color/gray"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout2">
@@ -105,6 +113,7 @@
         android:backgroundTint="#006B5F"
         android:text="@string/register_sign_up"
         android:textStyle="bold"
+        app:cornerRadius="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout3" />

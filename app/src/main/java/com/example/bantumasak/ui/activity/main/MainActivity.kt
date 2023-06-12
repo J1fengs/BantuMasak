@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
@@ -79,5 +80,13 @@ class MainActivity : AppCompatActivity() {
 
             else -> return true
         }
+    }
+
+    fun hideBottomNav() {
+        binding.navView.visibility = View.GONE
+    }
+
+    fun showBottomNav() {
+        binding.navView.visibility = View.VISIBLE
     }
 }

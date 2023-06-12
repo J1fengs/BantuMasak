@@ -20,4 +20,13 @@
         android:name="com.example.bantumasak.ui.fragments.PlannerFragment"
         android:label="Meal Plan"
         tools:layout="@layout/fragment_planner" />
+    <fragment
+        android:id="@+id/navigation_detail"
+        android:name="com.example.bantumasak.ui.fragments.detail.DetailFragment"
+        android:label="Detail"
+        tools:layout="@layout/fragment_detail" >
+        <argument
+            android:name="recipeId"
+            app:argType="string" />
+    </fragment>
 </navigation>

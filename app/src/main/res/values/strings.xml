@@ -19,4 +19,7 @@
     <string name="bottomnav_home">Home</string>
     <string name="bottomnav_discover">Discover</string>
     <string name="bottomnav_meal_plan">Planner</string>
+    <string name="item_recipes_image">Recipes Image</string>
+    <string name="item_recipename">Cumi Goreng Tepung</string>
+    <string name="detail_recipe_image">recipe Image</string>
 </resources>

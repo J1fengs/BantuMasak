@@ -1,4 +1,4 @@
-package com.example.bantumasak.ui.fragments.discover
+package com.example.bantumasak.ui.fragments.detail
 
 import android.util.Log
 import androidx.lifecycle.LiveData
@@ -11,12 +11,13 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class DiscoverViewModel : ViewModel() {
+class DetailViewModel : ViewModel() {
     private val _listRecipe = MutableLiveData<ArrayList<MealsItem>>()
     private val listRecipe: LiveData<ArrayList<MealsItem>> = _listRecipe
 
     private val _isLoading = MutableLiveData<Boolean>()
     val isLoading: LiveData<Boolean> = _isLoading
+
     fun getRecipe(query: String){
         _isLoading.value = true
         ApiConfig.getApiService().getRecipe(query).enqueue(object : Callback<RecipesResponse> {
