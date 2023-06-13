@@ -10,10 +10,11 @@ import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
 import com.example.bantumasak.databinding.FragmentDetailBinding
 import com.example.bantumasak.ui.activity.main.MainActivity
+import com.example.bantumasak.ui.fragments.detail.DetailFragmentArgs
 
 class DetailFragment : Fragment() {
     private val detailViewModel: DetailViewModel by viewModels()
-    private val args: DetailFragmentArgs  by navArgs()
+    private val args: DetailFragmentArgs by navArgs()
     private lateinit var recipeName: String
     private var _binding: FragmentDetailBinding? = null
     private val binding get() = _binding!!

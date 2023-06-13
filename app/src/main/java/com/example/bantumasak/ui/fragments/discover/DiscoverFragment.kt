@@ -12,7 +12,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.bantumasak.R
-import com.example.bantumasak.adapter.RecipesAdapter
+import com.example.bantumasak.ui.adapter.RecipesAdapter
 import com.example.bantumasak.api.response.MealsItem
 import com.example.bantumasak.databinding.FragmentDiscoverBinding
 import com.example.bantumasak.databinding.FragmentHomeBinding
@@ -56,7 +56,7 @@ class DiscoverFragment : Fragment() {
             }
         })
 
-        //setRv
+        setView()
         setRecyclerView()
     }
 
@@ -75,6 +75,12 @@ class DiscoverFragment : Fragment() {
             discoverRv.layoutManager = GridLayoutManager(context, 2)
             discoverRv.setHasFixedSize(true)
             discoverRv.adapter = adapter
+        }
+    }
+
+    private fun setView() {
+        binding?.fabCamera?.setOnClickListener {
+            findNavController().navigate(R.id.navigation_camera)
         }
     }
 

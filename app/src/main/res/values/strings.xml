@@ -22,4 +22,14 @@
     <string name="item_recipes_image">Recipes Image</string>
     <string name="item_recipename">Cumi Goreng Tepung</string>
     <string name="detail_recipe_image">recipe Image</string>
+    <string name="discover_ada_bahan_apa_hari_ini">Ada Bahan Apa Hari ini?</string>
+    <string name="discover_scan_food_ingredients">Scan Food Ingredients</string>
+    <string name="discover_search">Search</string>
+    <string name="camera_ingredients_image">ingredients image</string>
+    <string name="camera_open_gallery">Open Gallery</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="camera_hasil_scan">Hasil Scan</string>
+    <string name="camera_take_photo">Take Photo</string>
+    <string name="nav_profile">Profile</string>
 </resources>

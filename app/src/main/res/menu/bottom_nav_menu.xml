@@ -14,4 +14,9 @@
         android:id="@+id/navigation_planner"
         android:icon="@drawable/baseline_calendar_month_24"
         android:title="@string/bottomnav_meal_plan" />
+
+    <item
+        android:id="@+id/navigation_profile"
+        android:icon="@drawable/account_icon"
+        android:title="@string/nav_profile" />
 </menu>

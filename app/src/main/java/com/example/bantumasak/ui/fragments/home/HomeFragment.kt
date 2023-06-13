@@ -10,7 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.bantumasak.R
-import com.example.bantumasak.adapter.RecipesAdapter
+import com.example.bantumasak.ui.adapter.RecipesAdapter
 import com.example.bantumasak.api.response.MealsItem
 import com.example.bantumasak.databinding.FragmentHomeBinding
 
