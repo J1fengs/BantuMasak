@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginBottom="64dp"
     tools:context=".ui.fragments.camera.CameraFragment">
 
     <com.google.android.material.button.MaterialButton
@@ -27,11 +28,11 @@
         android:layout_width="match_parent"
         android:layout_height="300dp"
         android:contentDescription="@string/camera_ingredients_image"
+        android:src="@drawable/insertimage"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="ImageContrastCheck"
-        tools:src="@tools:sample/avatars" />
+        tools:ignore="ImageContrastCheck" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/camera_openGallery"

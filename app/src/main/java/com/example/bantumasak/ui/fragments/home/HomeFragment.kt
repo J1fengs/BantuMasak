@@ -10,6 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.bantumasak.R
+import com.example.bantumasak.api.response.BantuMasakRecipeResponseItem
 import com.example.bantumasak.ui.adapter.RecipesAdapter
 import com.example.bantumasak.api.response.MealsItem
 import com.example.bantumasak.databinding.FragmentHomeBinding
@@ -39,9 +40,9 @@ class HomeFragment : Fragment() {
         adapter = RecipesAdapter()
         adapter.notifyDataSetChanged()
         adapter.setOnItemClicked(object : RecipesAdapter.OnItemClicked{
-            override fun onItemClicked(data: MealsItem) {
+            override fun onItemClicked(data: BantuMasakRecipeResponseItem) {
                 val bundle = Bundle().apply {
-                    putString("recipeId", data.strMeal)
+                    putString("recipeId", data.title)
                 }
                 findNavController().navigate(R.id.navigation_detail, bundle)
             }

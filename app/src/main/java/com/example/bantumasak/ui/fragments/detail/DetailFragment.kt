@@ -37,9 +37,9 @@ class DetailFragment : Fragment() {
         }
         detailViewModel.getList().observe(viewLifecycleOwner) {recipe ->
             binding.apply {
-                Glide.with(requireContext()).load(recipe[0].strMealThumb).centerCrop().into(detailRecipeImage)
-                detailRecipename.text = recipe[0].strMeal
-                detailRecipedescription.text = recipe[0].strInstructions
+                Glide.with(requireContext()).load(recipe[0].image).centerCrop().into(detailRecipeImage)
+                detailRecipename.text = recipe[0].title
+                detailRecipedescription.text = recipe[0].instruction
             }
         }
     }

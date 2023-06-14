@@ -18,7 +18,7 @@ class ApiConfig {
                 .addInterceptor(loggingInterceptor)
                 .build()
             val retrofit = Retrofit.Builder()
-                .baseUrl("https://themealdb.com/api/json/v1/1/")
+                .baseUrl("https://coba-389607.et.r.appspot.com/recipes/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(client)
                 .build()

@@ -18,12 +18,15 @@ import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import com.example.bantumasak.R
 import com.example.bantumasak.databinding.FragmentCameraBinding
 import com.example.bantumasak.ml.ConvertedModelFoodClassificationV3
 import com.example.bantumasak.rotateBitmap
 import com.example.bantumasak.ui.activity.camerax.CameraxActivity
 import com.example.bantumasak.ui.activity.main.MainActivity
 import com.example.bantumasak.uritoBitmap
+import com.google.android.material.bottomappbar.BottomAppBar
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import org.tensorflow.lite.DataType
 import org.tensorflow.lite.support.image.ImageProcessor
 import org.tensorflow.lite.support.image.TensorImage
@@ -148,16 +151,6 @@ class CameraFragment : Fragment() {
                 ).show()
             }
         }
-    }
-
-    override fun onResume() {
-        super.onResume()
-        (activity as MainActivity).hideBottomNav()
-    }
-
-    override fun onPause() {
-        super.onPause()
-        (activity as MainActivity).showBottomNav()
     }
 
     override fun onDestroyView() {

@@ -1,7 +1,6 @@
 package com.example.bantumasak.ui.activity.main
 
 import android.content.Context
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
@@ -19,7 +18,6 @@ import com.example.bantumasak.R
 import com.example.bantumasak.databinding.ActivityMainBinding
 import com.example.bantumasak.local.UserPreference
 import com.example.bantumasak.ui.ViewModelFactory
-import com.example.bantumasak.ui.activity.WelcomeActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")
@@ -32,6 +30,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        binding.navView.background = null
 
         setBottomNav()
         setViewModel()
@@ -59,34 +58,22 @@ class MainActivity : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment_activity_main)
         val appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.navigation_home, R.id.navigation_discover, R.id.navigation_planner, R.id.navigation_profile
+                R.id.navigation_home, R.id.navigation_discover, R.id.navigation_camera, R.id.navigation_planner, R.id.navigation_profile
             )
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
     }
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.option_menu, menu)
-        return true
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item.itemId) {
-            R.id.logout_menu -> {
-                mainViewModel.logout()
-                return true
-            }
-
-            else -> return true
-        }
-    }
-
     fun hideBottomNav() {
         binding.navView.visibility = View.GONE
+        binding.bottomBar.visibility = View.GONE
     }
 
     fun showBottomNav() {
+        binding.bottomBar.visibility = View.VISIBLE
         binding.navView.visibility = View.VISIBLE
+
     }
+
 }

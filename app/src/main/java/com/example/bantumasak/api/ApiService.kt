@@ -2,6 +2,7 @@ package com.example.bantumasak.api
 
 import com.example.bantumasak.api.model.LoginModel
 import com.example.bantumasak.api.model.RegisterModel
+import com.example.bantumasak.api.response.BantuMasakRecipeResponse
 import com.example.bantumasak.api.response.LoginResponse
 import com.example.bantumasak.api.response.RecipesResponse
 import okhttp3.ResponseBody
@@ -22,8 +23,8 @@ interface ApiService {
         @Body info:LoginModel
     ): Call<LoginResponse>
 
-    @GET("search.php")
+    @GET("search")
     fun getRecipe(
-        @Query("s") query: String
-    ): Call<RecipesResponse>
+        @Query("keyword") query: String
+    ): Call<BantuMasakRecipeResponse>
 }

@@ -104,7 +104,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.083"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/camera_openGallery" />
+        app:layout_constraintTop_toBottomOf="@+id/login_loginBtn" />
 
     <TextView
         android:id="@+id/tvButton_toRegister"
@@ -117,7 +117,7 @@
         android:textColor="#006B5F"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/textView3"
-        app:layout_constraintTop_toBottomOf="@+id/camera_openGallery"
+        app:layout_constraintTop_toBottomOf="@+id/login_loginBtn"
         tools:ignore="TouchTargetSizeCheck" />
 
     <ProgressBar
