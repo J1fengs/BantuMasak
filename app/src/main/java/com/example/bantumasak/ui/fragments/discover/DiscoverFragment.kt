@@ -64,9 +64,9 @@ class DiscoverFragment : Fragment() {
         adapter = RecipesAdapter()
         adapter.notifyDataSetChanged()
         adapter.setOnItemClicked(object : RecipesAdapter.OnItemClicked {
-            override fun onItemClicked(data: BantuMasakRecipeResponseItem) {
+            override fun onItemClicked(data: MealsItem) {
                 val bundle = Bundle().apply {
-                    putString("recipeId", data.title)
+                    putString("recipeId", data.strMeal)
                 }
                 findNavController().navigate(R.id.navigation_detail, bundle)
             }

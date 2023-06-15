@@ -1,8 +1,11 @@
 package com.example.bantumasak.api.response
 
 import com.google.gson.annotations.SerializedName
+import retrofit2.http.Field
 
 data class BantuMasakRecipeResponse(
+	@field:SerializedName("BantuMasakArray")
+	val bantuMasakArray: Array<BantuMasakRecipeResponseItem>? = null,
 
 	@field:SerializedName("BantuMasakRecipeResponse")
 	val bantuMasakRecipeResponse: ArrayList<BantuMasakRecipeResponseItem>? = null

@@ -11,7 +11,7 @@ import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
 import androidx.lifecycle.ViewModelProvider
-import com.example.bantumasak.api.ApiConfig
+import com.example.bantumasak.api.ApiLoginConfig
 import com.example.bantumasak.api.model.LoginModel
 import com.example.bantumasak.api.response.LoginResponse
 import com.example.bantumasak.databinding.ActivityLoginBinding
@@ -63,12 +63,12 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun loginUser() {
-        val email = binding.loginEmail.text.toString()
+        val username = binding.loginEmail.text.toString()
         val password = binding.loginPassword.text.toString()
 
         if (password.length > 7) {
             showLoading(true)
-            ApiConfig.getApiService().loginUser(LoginModel(email, password))
+            ApiLoginConfig.getApiService().loginUser(LoginModel(username, password))
                 .enqueue(object : Callback<LoginResponse> {
                     override fun onResponse(
                         call: Call<LoginResponse>,

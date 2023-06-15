@@ -1,10 +1,9 @@
 package com.example.bantumasak.ui.activity.main
 
 import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuItem
 import android.view.View
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
@@ -18,6 +17,7 @@ import com.example.bantumasak.R
 import com.example.bantumasak.databinding.ActivityMainBinding
 import com.example.bantumasak.local.UserPreference
 import com.example.bantumasak.ui.ViewModelFactory
+import com.example.bantumasak.ui.activity.WelcomeActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")
@@ -61,6 +61,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.navigation_home, R.id.navigation_discover, R.id.navigation_camera, R.id.navigation_planner, R.id.navigation_profile
             )
         )
+        supportActionBar?.hide()
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
     }

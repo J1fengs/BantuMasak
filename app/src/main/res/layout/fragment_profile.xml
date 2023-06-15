@@ -16,6 +16,7 @@
             android:id="@+id/profile_accountImg"
             android:layout_width="180dp"
             android:layout_height="140dp"
+            android:layout_marginTop="16dp"
             android:src="@drawable/account_icon"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

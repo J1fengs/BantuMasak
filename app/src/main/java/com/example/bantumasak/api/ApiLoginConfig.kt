@@ -6,7 +6,7 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-class ApiConfig {
+class ApiLoginConfig {
     companion object {
         fun getApiService(): ApiService {
             val loggingInterceptor = if(BuildConfig.DEBUG) {
@@ -18,7 +18,7 @@ class ApiConfig {
                 .addInterceptor(loggingInterceptor)
                 .build()
             val retrofit = Retrofit.Builder()
-                .baseUrl("https://themealdb.com/api/json/v1/1/")
+                .baseUrl("http://192.168.31.240:3000/api/auth/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(client)
                 .build()

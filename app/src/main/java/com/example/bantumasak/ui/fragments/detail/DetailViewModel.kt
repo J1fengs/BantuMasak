@@ -5,8 +5,6 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.bantumasak.api.ApiConfig
-import com.example.bantumasak.api.response.BantuMasakRecipeResponse
-import com.example.bantumasak.api.response.BantuMasakRecipeResponseItem
 import com.example.bantumasak.api.response.MealsItem
 import com.example.bantumasak.api.response.RecipesResponse
 import retrofit2.Call
@@ -14,22 +12,22 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class DetailViewModel : ViewModel() {
-    private val _listRecipe = MutableLiveData<ArrayList<BantuMasakRecipeResponseItem>>()
-    private val listRecipe: LiveData<ArrayList<BantuMasakRecipeResponseItem>> = _listRecipe
+    private val _listRecipe = MutableLiveData<ArrayList<MealsItem>>()
+    private val listRecipe: LiveData<ArrayList<MealsItem>> = _listRecipe
 
     private val _isLoading = MutableLiveData<Boolean>()
     val isLoading: LiveData<Boolean> = _isLoading
 
     fun getRecipe(query: String){
         _isLoading.value = true
-        ApiConfig.getApiService().getRecipe(query).enqueue(object : Callback<BantuMasakRecipeResponse> {
+        ApiConfig.getApiService().getRecipe(query).enqueue(object : Callback<RecipesResponse> {
             override fun onResponse(
-                call: Call<BantuMasakRecipeResponse>,
-                response: Response<BantuMasakRecipeResponse>
+                call: Call<RecipesResponse>,
+                response: Response<RecipesResponse>
             ) {
                 if(response.isSuccessful){
                     _isLoading.value = false
-                    _listRecipe.postValue(response.body()?.bantuMasakRecipeResponse!!)
+                    _listRecipe.postValue(response.body()?.meals!!)
                     Log.d("OnSuccessful : ", response.body().toString())
                 } else {
                     _isLoading.value = false
@@ -37,13 +35,13 @@ class DetailViewModel : ViewModel() {
                 }
             }
 
-            override fun onFailure(call: Call<BantuMasakRecipeResponse>, t: Throwable) {
+            override fun onFailure(call: Call<RecipesResponse>, t: Throwable) {
                 Log.d("OnFailure : ", t.message.toString())
             }
         })
     }
 
-    fun getList(): LiveData<ArrayList<BantuMasakRecipeResponseItem>> {
+    fun getList(): LiveData<ArrayList<MealsItem>> {
         return listRecipe
     }
 }

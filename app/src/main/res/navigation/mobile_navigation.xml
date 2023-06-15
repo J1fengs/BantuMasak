@@ -8,22 +8,22 @@
     <fragment
         android:id="@+id/navigation_home"
         android:name="com.example.bantumasak.ui.fragments.home.HomeFragment"
-        android:label="Home"
+        android:label="BantuMasak"
         tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/navigation_discover"
         android:name="com.example.bantumasak.ui.fragments.discover.DiscoverFragment"
-        android:label="Discover"
+        android:label="BantuMasak"
         tools:layout="@layout/fragment_discover" />
     <fragment
         android:id="@+id/navigation_planner"
         android:name="com.example.bantumasak.ui.fragments.PlannerFragment"
-        android:label="Meal Plan"
+        android:label="BantuMasak"
         tools:layout="@layout/fragment_planner" />
     <fragment
         android:id="@+id/navigation_detail"
         android:name="com.example.bantumasak.ui.fragments.detail.DetailFragment"
-        android:label="Detail"
+        android:label="BantuMasak"
         tools:layout="@layout/fragment_detail" >
         <argument
             android:name="recipeId"
@@ -32,11 +32,11 @@
     <fragment
         android:id="@+id/navigation_camera"
         android:name="com.example.bantumasak.ui.fragments.camera.CameraFragment"
-        android:label="Camera"
+        android:label="BantuMasak"
         tools:layout="@layout/fragment_camera" />
     <fragment
         android:id="@+id/navigation_profile"
         android:name="com.example.bantumasak.ui.fragments.profile.ProfileFragment"
-        android:label="Profile"
+        android:label="BantuMasak"
         tools:layout="@layout/fragment_profile" />
 </navigation>

@@ -18,6 +18,7 @@
 
     <application
         android:allowBackup="true"
+        android:usesCleartextTraffic="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
@@ -26,6 +27,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BantuMasak"
         tools:targetApi="31">
+        <activity
+            android:name=".ui.activity.splash_screen.SplashScreenActivity"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".ui.activity.camerax.CameraxActivity"
             android:exported="false" />
@@ -42,11 +52,6 @@
             android:name=".ui.activity.main.MainActivity"
             android:exported="true"
             android:theme="@style/Theme.Material3.DayNight">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 

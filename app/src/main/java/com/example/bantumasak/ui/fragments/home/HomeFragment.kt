@@ -9,18 +9,21 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.bantumasak.R
 import com.example.bantumasak.api.response.BantuMasakRecipeResponseItem
 import com.example.bantumasak.ui.adapter.RecipesAdapter
 import com.example.bantumasak.api.response.MealsItem
 import com.example.bantumasak.databinding.FragmentHomeBinding
+import com.example.bantumasak.ui.adapter.BannerAdapter
 
 class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
-
     private val homeViewModel: HomeViewModel by viewModels()
     private lateinit var adapter: RecipesAdapter
+    private lateinit var bannerAdapter: BannerAdapter
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -33,6 +36,7 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setRecyclerView()
+        setBanner()
         getRecipesData()
     }
 
@@ -40,9 +44,9 @@ class HomeFragment : Fragment() {
         adapter = RecipesAdapter()
         adapter.notifyDataSetChanged()
         adapter.setOnItemClicked(object : RecipesAdapter.OnItemClicked{
-            override fun onItemClicked(data: BantuMasakRecipeResponseItem) {
+            override fun onItemClicked(data: MealsItem) {
                 val bundle = Bundle().apply {
-                    putString("recipeId", data.title)
+                    putString("recipeId", data.strMeal)
                 }
                 findNavController().navigate(R.id.navigation_detail, bundle)
             }
@@ -51,6 +55,15 @@ class HomeFragment : Fragment() {
             homeRv.layoutManager = GridLayoutManager(context, 2)
             homeRv.setHasFixedSize(true)
             homeRv.adapter = adapter
+        }
+    }
+
+    private fun setBanner() {
+        bannerAdapter = BannerAdapter()
+        bannerAdapter.notifyDataSetChanged()
+        binding.apply {
+            rvBanner.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+            rvBanner.adapter = bannerAdapter
         }
     }
 
