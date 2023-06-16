@@ -5,6 +5,12 @@ BantuMasak is an Android application with a main feature designed to assist hous
 
 ## Implementation
 
+### How to Run the Project
+1. Download the zip file and the JWT API on https://github.com/MunzirT/BantuMasak_APIs (this is used for the login and register feature)
+2. Open the JWT API on Visual Studio Code and run "npm run dev" on the terminal
+3. Adjust the ip on APILoginConfig to match your device IPV4 adress
+4. Run the project
+
 ### Android Studio
 
 -Implementing UI design using XML 
@@ -36,3 +42,4 @@ Making sure that user will have a pleasant experience
 
 ### Security
 ![autenthication](https://github.com/tdkRungkad/bantuMasak/assets/129688029/7f263753-dd6d-4663-9f4f-860cdef1cf22)
+
