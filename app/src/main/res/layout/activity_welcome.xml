@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg_pattern_v3"
     tools:context=".ui.activity.WelcomeActivity">
-
 
     <ImageView
         android:id="@+id/imageView"
@@ -38,6 +38,7 @@
         android:backgroundTint="#CCE8E2"
         android:text="@string/welcome_signup"
         android:textColor="#4A635E"
+        app:cornerRadius="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/slogan_tv" />
@@ -50,6 +51,7 @@
         android:backgroundTint="#006B5F"
         android:text="@string/welcome_login"
         android:textColor="#FFFFFF"
+        app:cornerRadius="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"

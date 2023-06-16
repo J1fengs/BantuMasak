@@ -4,8 +4,7 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuItem
+import android.view.View
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
@@ -31,6 +30,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        binding.navView.background = null
 
         setBottomNav()
         setViewModel()
@@ -44,12 +44,12 @@ class MainActivity : AppCompatActivity() {
             )
         )[MainViewModel::class.java]
 
-        mainViewModel.getUser().observe(this){
-            if(!it.isLogin){
-                startActivity(Intent(this, WelcomeActivity::class.java))
-                finish()
-            }
-        }
+//        mainViewModel.getUser().observe(this){
+//            if(!it.isLogin){
+//                startActivity(Intent(this, WelcomeActivity::class.java))
+//                finish()
+//            }
+//        }
     }
 
     private fun setBottomNav() {
@@ -58,26 +58,23 @@ class MainActivity : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment_activity_main)
         val appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.navigation_home, R.id.navigation_discover, R.id.navigation_planner
+                R.id.navigation_home, R.id.navigation_discover, R.id.navigation_camera, R.id.navigation_planner, R.id.navigation_profile
             )
         )
+        supportActionBar?.hide()
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
     }
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.option_menu, menu)
-        return true
+    fun hideBottomNav() {
+        binding.navView.visibility = View.GONE
+        binding.bottomBar.visibility = View.GONE
     }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item.itemId) {
-            R.id.logout_menu -> {
-                mainViewModel.logout()
-                return true
-            }
+    fun showBottomNav() {
+        binding.bottomBar.visibility = View.VISIBLE
+        binding.navView.visibility = View.VISIBLE
 
-            else -> return true
-        }
     }
+
 }

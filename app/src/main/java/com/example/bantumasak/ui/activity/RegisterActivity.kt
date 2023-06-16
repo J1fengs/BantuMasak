@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Toast
-import com.example.bantumasak.api.ApiConfig
+import com.example.bantumasak.api.ApiLoginConfig
 import com.example.bantumasak.api.model.RegisterModel
 import com.example.bantumasak.databinding.ActivityRegisterBinding
 import com.example.bantumasak.ui.activity.login.LoginActivity
@@ -37,14 +37,14 @@ class RegisterActivity : AppCompatActivity() {
     }
 
     private fun registerUser() {
-        val email = binding.registerEmail.text.toString()
+        val username = binding.registerEmail.text.toString()
         val password = binding.registerPassword.text.toString()
         val confirmPassword = binding.registerConfirmpassword.text.toString()
 
         if (password.length > 7) {
             if (password == confirmPassword) {
                 showLoading(true)
-                ApiConfig.getApiService().registerUser(RegisterModel(email, password))
+                ApiLoginConfig.getApiService().registerUser(RegisterModel(username, password))
                     .enqueue(object :
                         Callback<ResponseBody> {
                         override fun onResponse(

@@ -7,17 +7,39 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.example.bantumasak.ui.fragments.HomeFragment"
-        android:label="Home"
+        android:name="com.example.bantumasak.ui.fragments.home.HomeFragment"
+        android:label="BantuMasak"
         tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/navigation_discover"
-        android:name="com.example.bantumasak.ui.fragments.DiscoverFragment"
-        android:label="Discover"
+        android:name="com.example.bantumasak.ui.fragments.discover.DiscoverFragment"
+        android:label="BantuMasak"
         tools:layout="@layout/fragment_discover" />
     <fragment
         android:id="@+id/navigation_planner"
-        android:name="com.example.bantumasak.ui.fragments.PlannerFragment"
-        android:label="Meal Plan"
+        android:name="com.example.bantumasak.ui.fragments.planner.PlannerFragment"
+        android:label="BantuMasak"
         tools:layout="@layout/fragment_planner" />
+    <fragment
+        android:id="@+id/navigation_detail"
+        android:name="com.example.bantumasak.ui.fragments.detail.DetailFragment"
+        android:label="BantuMasak"
+        tools:layout="@layout/fragment_detail" >
+        <argument
+            android:name="recipeId"
+            app:argType="string" />
+        <argument
+            android:name="avatar"
+            app:argType="string"/>
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_camera"
+        android:name="com.example.bantumasak.ui.fragments.camera.CameraFragment"
+        android:label="BantuMasak"
+        tools:layout="@layout/fragment_camera" />
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.example.bantumasak.ui.fragments.profile.ProfileFragment"
+        android:label="BantuMasak"
+        tools:layout="@layout/fragment_profile" />
 </navigation>
