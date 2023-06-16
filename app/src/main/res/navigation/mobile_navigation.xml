@@ -17,7 +17,7 @@
         tools:layout="@layout/fragment_discover" />
     <fragment
         android:id="@+id/navigation_planner"
-        android:name="com.example.bantumasak.ui.fragments.PlannerFragment"
+        android:name="com.example.bantumasak.ui.fragments.planner.PlannerFragment"
         android:label="BantuMasak"
         tools:layout="@layout/fragment_planner" />
     <fragment
@@ -28,6 +28,9 @@
         <argument
             android:name="recipeId"
             app:argType="string" />
+        <argument
+            android:name="avatar"
+            app:argType="string"/>
     </fragment>
     <fragment
         android:id="@+id/navigation_camera"

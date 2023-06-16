@@ -67,6 +67,7 @@ class DiscoverFragment : Fragment() {
             override fun onItemClicked(data: MealsItem) {
                 val bundle = Bundle().apply {
                     putString("recipeId", data.strMeal)
+                    putString("avatar", data.strMealThumb)
                 }
                 findNavController().navigate(R.id.navigation_detail, bundle)
             }

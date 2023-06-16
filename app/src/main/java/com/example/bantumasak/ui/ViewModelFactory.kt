@@ -6,6 +6,7 @@ import com.example.bantumasak.local.UserPreference
 import com.example.bantumasak.ui.activity.login.LoginViewModel
 import com.example.bantumasak.ui.activity.main.MainViewModel
 import com.example.bantumasak.ui.fragments.home.HomeViewModel
+import com.example.bantumasak.ui.fragments.profile.ProfileViewModel
 
 class ViewModelFactory(private val pref: UserPreference) : ViewModelProvider.NewInstanceFactory() {
     @Suppress("UNCHECKED_CAST")
@@ -16,6 +17,9 @@ class ViewModelFactory(private val pref: UserPreference) : ViewModelProvider.New
             }
             modelClass.isAssignableFrom(LoginViewModel::class.java) -> {
                 LoginViewModel(pref) as T
+            }
+            modelClass.isAssignableFrom(ProfileViewModel::class.java) -> {
+                ProfileViewModel(pref) as T
             }
             modelClass.isAssignableFrom(HomeViewModel::class.java) -> {
                 HomeViewModel() as T
